@@ -3,365 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>アルザス</title>
+    <title>AI学習コミュニティ アルザス - 未来を創るスキルをその手に</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #00C9A7;
-            --secondary-color: #FFC65C;
-            --background-color: #FDFDFF;
-            --text-color: #333;
-            --card-bg: #fff;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background: var(--background-color);
-            color: var(--text-color);
-        }
-        .container {
-            width: 85%;
-            max-width: 1100px;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-        header {
-            background: linear-gradient(135deg, var(--primary-color), #84fab0);
-            color: #fff;
-            padding: 4rem 0;
-            text-align: center;
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-        }
-        .header-logo {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 1.5rem;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #fff;
-            box-shadow: var(--shadow);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        header p {
-            font-size: 1.3rem;
-            opacity: 0.9;
-        }
-        .main {
-            padding: 40px 0;
-        }
-        .section {
-            margin-bottom: 60px;
-        }
-        .section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            font-weight: 600;
-            position: relative;
-        }
-        .section h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--primary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-        .feature {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        .feature:hover {
-            transform: translateY(-10px);
-        }
-        .feature h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-        }
-        .cta {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, var(--secondary-color), #ff9a8b);
-            border-radius: 30px;
-        }
-        .cta h2 {
-            color: #fff;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-        .cta h2::after {
-            background: #fff;
-        }
-        .cta p {
-            color: #fff;
-            font-size: 1.1rem;
-        }
-        .discord-button {
-            background: #fff;
-            color: var(--primary-color);
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-            display: inline-block;
-            margin-top: 20px;
-        }
-        .discord-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        .pricing-table {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        .pricing-plan {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            border: 2px solid #eee;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-        .pricing-plan:hover {
-            transform: scale(1.05);
-        }
-        .pricing-plan.recommended {
-            border: 2px solid var(--primary-color);
-            position: relative;
-            transform: scale(1.05);
-        }
-        .pricing-plan.recommended::before {
-            content: '🚀 人気No.1';
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary-color);
-            color: #fff;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        .pricing-plan h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-        .price {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-        .price span {
-            font-size: 1.1rem;
-            font-weight: normal;
-            color: #666;
-        }
-        .save {
-            color: #fff;
-            background: var(--secondary-color);
-            font-weight: 600;
-            margin-bottom: 20px;
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        .pricing-plan ul {
-            list-style: none;
-            padding: 0;
-            margin: 25px 0;
-        }
-        .pricing-plan ul li {
-            margin-bottom: 12px;
-            color: #555;
-        }
-        .plan-button {
-            background: var(--primary-color);
-            color: #fff;
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            display: inline-block;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            border: none;
-        }
-        .plan-button:hover {
-            background: #00b392;
-            transform: translateY(-3px);
-        }
-        .faq-item {
-            background: var(--card-bg);
-            margin-bottom: 15px;
-            border-radius: 15px;
-            border: none;
-            box-shadow: var(--shadow);
-        }
-        .faq-item summary {
-            padding: 20px;
-            font-weight: 600;
-            cursor: pointer;
-            outline: none;
-            position: relative;
-            font-size: 1.1rem;
-        }
-        .faq-item summary::-webkit-details-marker {
-            display: none;
-        }
-        .faq-item summary::after {
-            content: '+';
-            position: absolute;
-            right: 25px;
-            font-size: 1.8rem;
-            transition: transform 0.3s ease;
-            color: var(--primary-color);
-        }
-        .faq-item[open] {
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
-        .faq-item[open] summary::after {
-            transform: rotate(45deg);
-        }
-        .faq-answer {
-            padding: 0 20px 20px;
-            line-height: 1.8;
-        }
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
-            background: #333;
-            color: #fff;
-        }
-        @media (max-width: 768px) {
-            .pricing-table {
-                grid-template-columns: 1fr;
-            }
-            header h1 { font-size: 2.5rem; }
-            .section h2 { font-size: 2rem; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <div class="container">
-            <img src="12994.png" alt="アルザスロゴ" class="header-logo">
-            <h1>アルザス</h1>
-            <p>仲間と共に、最先端のAI技術を学び、未来を創造しよう。</p>
+            <h1 class="animated">未来を創る、<span>AIスキル</span>をその手に。</h1>
+            <p class="animated" style="transition-delay: 0.1s;">AI学習コミュニティ「アルザス」は、未経験からでもAIエンジニアを目指せる、実践型オンラインコミュニティです。本物のスキルを、最高の仲間と。</p>
+            <a href="#pricing" class="cta-button animated" style="transition-delay: 0.2s;">30秒で参加して、未来を変える</a>
         </div>
     </header>
 
-    <div class="main container">
-        <section class="section">
-            <h2>コミュニティで得られること</h2>
-            <div class="features">
-                <div class="feature">
-                    <h3>専門家からの学び</h3>
-                    <p>業界��第一線で活躍する専門家から、最新の知識とスキルを直接学べます。</p>
-                </div>
-                <div class="feature">
-                    <h3>プロジェクトでの協業</h3>
-                    <p>同じ志を持つ仲間とチームを組み、実践的なプロジェクト開発に挑戦できます。</p>
-                </div>
-                <div class="feature">
-                    <h3>最新トレンドのキャッチアップ</h3>
-                    <p>日々進化するAIの最新情報を共有し、常に業界の最前線に立つことができます。</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>料金プラン</h2>
-            <div class="pricing-table">
-                <div class="pricing-plan">
-                    <h3>月額プラン</h3>
-                    <div class="price">¥2,980<span>/月</span></div>
-                    <ul>
-                        <li>✅ すべての学習コンテンツへのアクセス</li>
-                        <li>✅ コミュニティイベントへの参加</li>
-                        <li>✅ プロジェクトへの参加</li>
-                        <li>✅ 月1回のメンタリング</li>
-                    </ul>
-                    <a href="#" class="plan-button">プランを選択</a>
-                </div>
-                <div class="pricing-plan recommended">
-                    <h3>年額プラン</h3>
-                    <div class="save">2ヶ月分お得！</div>
-                    <div class="price">¥29,800<span>/年</span></div>
-                    <ul>
-                        <li>✅ すべての学習コンテンツへのアクセス</li>
-                        <li>✅ コミュニティイベントへの参加</li>
-                        <li>✅ プロジェクトへの参加</li>
-                        <li>✅ 月1回のメンタリング</li>
-                    </ul>
-                    <a href="#" class="plan-button">プランを選択</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>よくある質問 (FAQ)</h2>
-            <details class="faq-item">
-                <summary>プログラミング初心者でも参加できますか？</summary>
-                <div class="faq-answer">
-                    <p>はい、もちろんです。当コミュニティは初心者から上級者まで、あらゆるレベルの方を歓迎しています。初心者向けの学習ロードマップや、基礎から学べるコンテンツを多数用意しており、メンターによるサポートも受けられます。</p>
-                </div>
-            </details>
-            <details class="faq-item">
-                <summary>どのような支払い方法がありますか？</summary>
-                <div class="faq-answer">
-                    <p>現在、各種クレジットカード（Visa, MasterCard, American Expressなど）による決済に対応しています。</p>
-                </div>
-            </details>
-            <details class="faq-item">
-                <summary>途中で退会することはできますか？</summary>
-                <div class="faq-answer">
-                    <p>はい、いつでもご自身のタイミングで退会手続きが可能です。サブスクリプションは、手続きが完了した次の請求期間から更新されません。</p>
-                </div>
-            </details>
-        </section>
-
-        <section class="section cta">
+    <main>
+        <section id="profile" class="section">
             <div class="container">
-                <h2>今すぐコミュニティに参加しよう！</h2>
-                <p>下のボタンからDiscordサーバーに参加して、AIプログラミングの学習を始めましょう。</p>
-                <a href="#" class="discord-button">Discordに参加する</a>
+                <div class="profile-flex animated">
+                    <img src="12994.png" alt="主催者" class="profile-img">
+                    <div class="profile-text">
+                        <h3>主催者: AI学習コミュニティ アルザス</h3>
+                        <p>AI技術の最前線で活動する開発者が、自らの経験を元に「本当に価値のある」学習環境を創りたいという想いから設立。机上の空論ではない、現場で使えるスキルを提供します。</p>
+                    </div>
+                </div>
             </div>
         </section>
-    </div>
+
+        <section id="features" class="section">
+            <div class="container">
+                <h2 class="section-title animated">アルザスで得られるもの</h2>
+                <div class="features-grid">
+                    <div class="feature-card animated">
+                        <h3>実践的プロジェクト</h3>
+                        <p>実際の企業案件を模したプロジェクトにチームで��り組み、ポートフォリオを充実させます。</p>
+                    </div>
+                    <div class="feature-card animated" style="transition-delay: 0.1s;">
+                        <h3>現役エンジニアの指導</h3>
+                        <p>業界トップクラスのエンジニアが、あなたのコードを直接レビュー。本物の思考法が身につきます。</p>
+                    </div>
+                    <div class="feature-card animated" style="transition-delay: 0.2s;">
+                        <h3>質の高いコミュニティ</h3>
+                        <p>同じ目標を持つ仲間と切磋琢磨し、モチベーションを維持。一生モノの繋がりが生まれます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section">
+            <div class="container">
+                <h2 class="section-title animated">参加プラン</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-plan animated">
+                        <h3>月額プラン</h3>
+                        <div class="price">¥2,980<span>/月</span></div>
+                        <ul>
+                            <li>✔ 全ての学習コンテンツ</li>
+                            <li>✔ Discordコミュニティ参加</li>
+                            <li>✔ 週1回のオンライン勉強会</li>
+                        </ul>
+                        <a href="#" class="cta-button">このプランで始める</a>
+                    </div>
+                    <div class="pricing-plan recommended animated" style="transition-delay: 0.1s;">
+                        <h3>年額プラン</h3>
+                        <div class="price">¥29,800<span>/年</span></div>
+                        <ul>
+                            <li>✔ 全ての学習コン���ンツ</li>
+                            <li>✔ Discordコミュニティ参加</li>
+                            <li>✔ 週1回のオンライン勉強会</li>
+                            <li>✔ <strong>限定イベントご招待</strong></li>
+                        </ul>
+                        <a href="#" class="cta-button">このプランで始める</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section">
+            <div class="container">
+                <h2 class="section-title animated">参加者の声</h2>
+                <div class="testimonial-card animated">
+                    <p>"独学では絶対に得られない視点をもらえました。特にチーム開発の経験は、転職活動で大きな武器になりました。"</p>
+                    <div class="author">- T.Kさん (20代・Webエンジニア)</div>
+                </div>
+                <div class="testimonial-card animated" style="transition-delay: 0.1s;">
+                    <p>"非エンジニアでしたが、基礎から丁寧に教えていただき、今では自分でAIアプリを開発できるように。人生が変わりました。"</p>
+                    <div class="author">- M.Sさん (30代・企画職)</div>
+                </div>
+                <div class="testimonial-card animated" style="transition-delay: 0.2s;">
+                    <p>"何より、同じ目標を持つ仲間ができたことが一番の収穫です。モチベーションが落ちた時も、みんなの頑張りに励まされました。"</p>
+                    <div class="author">- H.Yさん (20代・学生)</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section">
+            <div class="container">
+                <h2 class="section-title animated">よくある質問</h2>
+                <details class="faq-item animated">
+                    <summary>プログラミング初心者でも参加できますか？</summary>
+                    <p>はい、もちろんです。当コミュニティは初心者から上級者まで、あらゆるレベルの方を歓迎しています。初心者向けの学習ロードマップや、基礎から学べるコンテンツを多数用意しており、メンターによるサポートも受けられます。</p>
+                </details>
+                <details class="faq-item animated" style="transition-delay: 0.1s;">
+                    <summary>どのような支払い方法がありますか？</summary>
+                    <p>現在、各種クレジットカード（Visa, MasterCard, American Expressなど）による決済に対応しています。</p>
+                </details>
+                <details class="faq-item animated" style="transition-delay: 0.2s;">
+                    <summary>途中で退会することはできますか？</summary>
+                    <p>はい、いつでもご自身のタイミングで退会手続きが可能です。サブスクリプションは、手続きが完了した次の請求期間から更新されません。</p>
+                </details>
+            </div>
+        </section>
+
+        <section id="blog" class="section">
+            <div class="container">
+                <h2 class="section-title animated">最新ブログ</h2>
+                <div class="blog-grid">
+                    <a href="#" class="blog-card animated">
+                        <div class="blog-card-img"><span>BLOG</span></div>
+                        <div class="blog-card-content">
+                            <h3>【悲報】ただのAI利用者は、もう稼げません。</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="blog-card animated" style="transition-delay: 0.1s;">
+                        <div class="blog-card-img"><span>BLOG</span></div>
+                        <div class="blog-card-content">
+                            <h3>AI時代を生き抜く必須スキルTOP3</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="blog-card animated" style="transition-delay: 0.2s;">
+                        <div class="blog-card-img"><span>BLOG</span></div>
+                        <div class="blog-card-content">
+                            <h3>文系からでもAIエンジニアになれた僕の学習法</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 アルザス. All Rights Reserved.</p>
+            <p>&copy; 2025 AI学習コミ���ニティ アルザス. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
